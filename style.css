@@ -1,0 +1,255 @@
+/* Устанавливаем базовую структуру страницы */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Высота страницы на весь экран */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    padding: 20px 0;
+    color: white;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Секция калькулятора */
+#calc {
+    background: linear-gradient(to right, #f8ffff, #e0f7ff);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#calc:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#calc h2 {
+    font-size: 1.8em;
+    color: #2575fc;
+    margin-bottom: 15px;
+}
+
+#calc label {
+    display: block;
+    font-size: 1.1em;
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+#calc input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+#calc input:focus {
+    border-color: #2575fc;
+    outline: none;
+}
+
+#calc button {
+    background: linear-gradient(to right, #2575fc, #6a11cb);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#calc button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#calc button:active {
+    transform: scale(0.95);
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+}
+
+#calc p#result {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2575fc;
+    transition: opacity 0.5s;
+    opacity: 0;
+}
+
+#calc p#result.visible {
+    opacity: 1;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#calc {
+    animation: fadeIn 0.6s ease-out;
+}
+
+
+header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ffdd00;
+}
+
+/* Основное содержимое */
+main {
+    flex: 1; /* Заставляет main растягиваться */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: #ddd;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+footer nav ul {
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer nav ul li a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s;
+}
+
+footer nav ul li a:hover {
+    color: #ffdd00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: cen
+    }
+}
+
+/* about  */
+
+main {
+    background-color: #fff;
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    animation: slideIn 1s ease-out;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* стиль для фото */
+
+.about-image {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.about-img {
+    width: 90%; 
+    max-width: 900px;
+    border-radius: 10px;
+    transition: transform 0.3s ease; 
+}
+
+.about-img:hover {
+    transform: scale(1.05); 
+}
